@@ -12,18 +12,16 @@ app.use(cors({
     credentials: true,
 }));
 
-app.use('/api', userRoutes)
+app.use('/api/user/', userRoutes)
+
+app.get('/',(req, res) => {
+    res.send("Api running");
+});
 
 
-
-
-
-// app.get('/', (req, res) => {
-//     res.send('Welcome to Node.js with MySQL and ES Modules!');
-// });
 
 // Start the server
-const PORT = 8080;
+const PORT = 3000;
 app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}/`);
 });
